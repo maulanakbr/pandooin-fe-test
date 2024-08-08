@@ -20,6 +20,7 @@ const defaultIsCurrent: NavigationItem['isCurrent'] = ({ item, pathname }) => {
 
 export function NavigationItem({ index, item }: NavigationItemProps) {
   const pathname = usePathname();
+
   const isCurrent: NavigationItem['isCurrent'] =
     item.isCurrent || defaultIsCurrent;
   const current = isCurrent({ item, pathname });
@@ -29,11 +30,15 @@ export function NavigationItem({ index, item }: NavigationItemProps) {
       <Link
         href={item.href}
         aria-current={current ? 'page' : undefined}
-        className={cn(
-          '[&[aria-current="page"]]:border-b-2 [&[aria-current="page"]]:border-default'
-        )}
+        className='md:text-[17px] md:font-bold [&[aria-current="page"]]:border-b-2 [&[aria-current="page"]]:border-default'
       >
-        {titleCase(getItemName(item.name))}
+        {!item.isHasBorder ? (
+          titleCase(getItemName(item.name))
+        ) : (
+          <span className="border-2 text-emphasis rounded-full py-3 px-6 md:p-3 font-semibold border-emphasis hover:bg-emphasis hover:text-foreground">
+            {titleCase(getItemName(item.name))}
+          </span>
+        )}
       </Link>
     </React.Fragment>
   );

@@ -7,6 +7,7 @@ export type NavigationItem = {
   href: string;
   onClick?: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
   target?: HTMLAnchorElement['target'];
+  isHasBorder?: boolean;
   isCurrent: ({
     item,
     pathname,
@@ -39,8 +40,9 @@ export const NAVIGATIONS = [
     isCurrent: ({ pathname }) => pathname?.startsWith('/article') ?? false,
   },
   {
-    name: 'need-asistance',
-    href: '/need-asistance',
+    name: 'need-assistance?',
+    href: '/need-assistance',
+    isHasBorder: true,
     isCurrent: ({ pathname }) =>
       pathname?.startsWith('/need-asistance') ?? false,
   },

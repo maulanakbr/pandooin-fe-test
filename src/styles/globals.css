@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 48, 33%, 97%;
+    --bg-emphasis: 180, 100%, 13%;
+    --bg-subtle: 180, 83%, 25%;
+    --bg-accent: 42, 57%, 63%;
+
+    --text: 0, 0%, 0%;
+    --text-emphasis: 180, 100%, 13%;
+    --text-subtle: 180, 83%, 25%;
+    --text-foreground: 48, 33%, 97%;
+    --text-accent: 42, 57%, 63%;
+    --text-muted: 0, 0%, 72%;
+
+    --border: 0, 0%, 0%;
+    --border-emphasis: 180, 100%, 13%;
+    --border-subtle: 180, 83%, 25%;
+    --border-foreground: 48, 33%, 97%;
+  }
+}
+
+body  {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}

@@ -42,7 +42,7 @@ export default function RootLayout({
       <head />
       <body
         className={cn(
-          'min-h-screen bg-default font-body',
+          'min-h-screen bg font-body',
           fontBody.variable,
           fontHeading.variable,
           fontAccent.variable

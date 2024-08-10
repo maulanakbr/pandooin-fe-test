@@ -4,10 +4,11 @@ import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { cn } from '@/lib/cn';
 import type { NavigationItem } from '@/lib/constants';
 import { getItemName } from '@/lib/get-item-name';
 import { titleCase } from '@/lib/title-case';
+
+import { Button } from '../ui/button';
 
 type NavigationItemProps = {
   index?: number;
@@ -32,12 +33,10 @@ export function NavigationItem({ index, item }: NavigationItemProps) {
         aria-current={current ? 'page' : undefined}
         className='md:text-[17px] md:font-bold [&[aria-current="page"]]:border-b-2 [&[aria-current="page"]]:border-default'
       >
-        {!item.isHasBorder ? (
+        {!item.action ? (
           titleCase(getItemName(item.name))
         ) : (
-          <span className="border-2 text-emphasis rounded-full py-3 px-6 md:p-3 font-semibold border-emphasis hover:bg-emphasis hover:text-foreground">
-            {titleCase(getItemName(item.name))}
-          </span>
+          <Button variant="outline">{titleCase(getItemName(item.name))}</Button>
         )}
       </Link>
     </React.Fragment>

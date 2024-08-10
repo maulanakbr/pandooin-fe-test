@@ -1,3 +1,5 @@
+import { cn } from '@/lib/cn';
+
 import { BrandGold } from './icons/brand-gold';
 import { BrandWhite } from './icons/brand-white';
 
@@ -10,9 +12,9 @@ export default function Logo({ className, isMobile }: Partial<LogoProps>) {
   return (
     <>
       {isMobile ? (
-        <BrandGold className={className} />
+        <BrandGold className={cn('cursor-pointer', className)} />
       ) : (
-        <BrandWhite className={className} />
+        <BrandWhite className={cn('cursor-pointer', className)} />
       )}
     </>
   );

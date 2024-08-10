@@ -19,17 +19,22 @@ const config = {
       fontFamily: {
         body: ['var(--font-body)', ...fontFamily.sans],
         heading: ['var(--font-heading)', ...fontFamily.sans],
-        accent: ['var(--font-accent)', ...fontFamily.serif],
+        accent: ['var(--font-accent)', ...fontFamily.sans],
+      },
+      fontSize: {
+        body: 'var(--text-body)',
+        heading: 'var(--text-heading)',
+        'sub-heading': 'var(--text-sub-heading)',
       },
       colors: {
-        default: 'hsl(var(--bg))',
+        DEFAULT: 'hsl(var(--bg))',
         emphasis: 'hsl(var(--bg-emphasis))',
         subtle: 'hsl(var(--bg-subtle))',
         foreground: 'hsl(var(--bg-foreground))',
         accent: 'hsl(var(--bg-accent))',
       },
       textColor: {
-        default: 'hsl(var(--text))',
+        DEFAULT: 'hsl(var(--text))',
         emphasis: 'hsl(var(--text-emphasis))',
         subtle: 'hsl(var(--text-subtle))',
         foreground: 'hsl(var(--text-foreground))',
@@ -37,10 +42,13 @@ const config = {
         muted: 'hsl(var(--text-muted))',
       },
       borderColor: {
-        default: 'hsl(var(--border))',
+        DEFAULT: 'hsl(var(--border))',
         emphasis: 'hsl(var(--border-emphasis))',
         subtle: 'hsl(var(--border-subtle))',
         foreground: 'hsl(var(--border-foreground))',
+      },
+      backgroundImage: {
+        'hero-background': 'url("/assets/pics/hero.png")',
       },
     },
   },

@@ -1,8 +1,8 @@
-export const titleCase = (title: string) => {
+export const titleCase = (title: string, includeChild?: boolean) => {
   const titleLength = title.split(' ').length;
   const ifTitleMoreThanOneWord: string[] = [];
 
-  if (titleLength > 1) {
+  if (titleLength > 1 && includeChild) {
     title
       .split(' ')
       .forEach((val) =>

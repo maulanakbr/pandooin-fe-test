@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    /* COLORS */
     --bg: 48, 33%, 97%;
     --bg-emphasis: 180, 100%, 13%;
     --bg-subtle: 180, 83%, 25%;
@@ -21,6 +22,18 @@
     --border-emphasis: 180, 100%, 13%;
     --border-subtle: 180, 83%, 25%;
     --border-foreground: 48, 33%, 97%;
+
+    /* SIZING */
+    --text-body: 16px;
+    --text-caption: 14px;
+    --text-heading: 86px;
+    --text-sub-heading: 24px;
+  }
+}
+
+@layer utilities {
+  .flex-col-gap-1 > :nth-child(n + 2) {
+    @apply mb-[4rem];
   }
 }
 

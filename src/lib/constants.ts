@@ -110,3 +110,10 @@ export const CTA = {
     text: 'customize your trip',
   },
 } satisfies AbstractContent;
+
+export const DESTINATIONS = {
+  headline: 'destinations',
+  action: {
+    text: 'explore more',
+  },
+} satisfies AbstractContent;

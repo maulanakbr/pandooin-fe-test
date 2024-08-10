@@ -33,7 +33,7 @@
 
 @layer utilities {
   .flex-col-gap-1 > :nth-child(n + 2) {
-    @apply mb-[4rem];
+    @apply mb-[4rem] md:mb-[6rem];
   }
 }
 

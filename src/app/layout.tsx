@@ -5,6 +5,7 @@ import localFont from 'next/font/local';
 import '@/styles/globals.css';
 
 import { cn } from '@/lib/cn';
+import AppProvider from '@/components/app-provider';
 
 const fontBody = Albert_Sans({
   subsets: ['latin'],
@@ -40,16 +41,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body
-        className={cn(
-          'min-h-screen bg font-body',
-          fontBody.variable,
-          fontHeading.variable,
-          fontAccent.variable
-        )}
-      >
-        {children}
-      </body>
+      <AppProvider>
+        <body
+          className={cn(
+            'min-h-screen bg font-body',
+            fontBody.variable,
+            fontHeading.variable,
+            fontAccent.variable
+          )}
+        >
+          {children}
+        </body>
+      </AppProvider>
     </html>
   );
 }

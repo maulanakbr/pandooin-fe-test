@@ -23,8 +23,8 @@ export default function DestinationCard({
     <div
       className={cn(
         itemIndex === 1
-          ? 'mt-12 flex w-full max-h-full md:mt-12 flex-col gap-4 md:flex-row md:gap-12'
-          : 'mt-12 flex w-full max-h-full md:mt-24 flex-col gap-4 md:flex-row md:gap-12'
+          ? 'mt-12 flex max-h-full w-full flex-col gap-4 md:mt-12 md:flex-row md:gap-12'
+          : 'mt-12 flex max-h-full w-full flex-col gap-4 md:mt-24 md:flex-row md:gap-12'
       )}
     >
       <div

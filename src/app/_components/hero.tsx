@@ -7,15 +7,15 @@ import Shell from '@/components/layouts/shell';
 
 export default function Hero({ data }: AbstractContentProvider<Hero>) {
   return (
-    <Shell className="flex bg-hero-background min-h-screen bg-center bg-no-repeat bg-cover justify-center flex-col items-center md:items-start gap-0">
-      <div className="text-center md:text-left max-w-[24em] md:max-w-[60em]">
-        <h3 className="font-accent leading-[0.7em] text-accent text-heading text-wrap tracking-tight md:tracking-normal">
+    <Shell className="flex min-h-screen flex-col items-center justify-center gap-0 bg-hero-background bg-cover bg-center bg-no-repeat md:items-start">
+      <div className="max-w-[24em] text-center md:max-w-[60em] md:text-left">
+        <h3 className="text-wrap font-accent text-heading leading-[0.7em] tracking-tight text-accent md:tracking-normal">
           {titleCase(data.headline, true)}
         </h3>
-        <h4 className="font-heading font-bold text-foreground text-sub-heading">
+        <h4 className="font-heading text-sub-heading font-bold text-foreground">
           {titleCase(data.subHeadline, true)}
         </h4>
-        <p className="text-foreground text-body md:text-sub-heading">
+        <p className="text-body text-foreground md:text-sub-heading">
           {titleCase(data.description)}
         </p>
         {'action' in data &&

@@ -10,17 +10,17 @@ export default function Footer() {
   const currentYear = date.getFullYear();
 
   return (
-    <footer className="w-full text-caption bg-emphasis py-4 md:px-4 md:items-center flex flex-col md:flex-row md:justify-between items-center text-center text-foreground">
-      <div className="flex flex-col justify-center items-center gap-4 mb-4 md:mb-0">
+    <footer className="flex w-full flex-col items-center bg-emphasis py-4 text-center text-caption text-foreground md:flex-row md:items-center md:justify-between md:px-4">
+      <div className="mb-4 flex flex-col items-center justify-center gap-4 md:mb-0">
         <h4>
           &copy;{' '}
           {`${currentYear} ${titleCase(FOOTER.headline)} by ${titleCase(FOOTER.subHeadline)}`}
         </h4>
       </div>
       <div className="flex gap-4">
-        <Facebook className="w-5 h-6" />
-        <Instagram className="w-6 h-6" />
-        <Email className="w-6 h-6" />
+        <Facebook className="h-6 w-5" />
+        <Instagram className="size-6" />
+        <Email className="size-6" />
       </div>
     </footer>
   );

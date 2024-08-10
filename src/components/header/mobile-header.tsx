@@ -24,9 +24,9 @@ export default function MobileHeader() {
       </div>
       {toggle ? (
         <React.Fragment>
-          <div className="fixed top-0 right-0 w-full h-screen bg-neutral-900/50">
-            <nav className="absolute flex flex-col justify-around right-0 z-10 w-[18em] min-w-[5em] h-full bg-foreground">
-              <div className="rounded-full border-2 border-subtle p-2 text-subtle self-end mr-3">
+          <div className="fixed right-0 top-0 h-screen w-full bg-neutral-900/50">
+            <nav className="absolute right-0 z-10 flex h-full w-[18em] min-w-[5em] flex-col justify-around bg-foreground">
+              <div className="mr-3 self-end rounded-full border-2 border-subtle p-2 text-subtle">
                 <LazyIcon name="x" size={26} onClick={handleToggle} />
               </div>
               <ul className="flex flex-col justify-center gap-10 p-4 text-right text-subtle">

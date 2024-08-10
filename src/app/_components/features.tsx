@@ -32,7 +32,7 @@ export default function Features({ data }: AbstractContentProvider<Features>) {
             <h4 className="font-body text-sub-heading text-subtle">
               {child.name.toUpperCase()}
             </h4>
-            <p className="text-caption text-center md:text-body">
+            <p className="text-center text-caption md:text-body">
               {titleCase(child.description)}
             </p>
           </div>

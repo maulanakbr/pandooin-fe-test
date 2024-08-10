@@ -8,7 +8,7 @@ interface ShellProps extends React.HTMLAttributes<HTMLDetailsElement> {
 export default function Shell({ children, className, ...props }: ShellProps) {
   return (
     <section
-      className={cn('max-w-full px-[0.5rem] md:px-[6rem] text', className)}
+      className={cn('max-w-full px-2 text md:px-24', className)}
       {...props}
     >
       {children}

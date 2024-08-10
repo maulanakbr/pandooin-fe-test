@@ -26,7 +26,7 @@ export default function CTA({ data }: AbstractContentProvider<Cta>) {
             <h3 className="text-wrap font-heading text-sub-heading font-bold leading-8 text-emphasis md:text-[28px] md:leading-[4rem]">
               {titleCase(data.headline, true)}
             </h3>
-            <p className="text-caption mt-4 md:mt-0 md:text-body">
+            <p className="mt-4 text-caption md:mt-0 md:text-body">
               {titleCase(data.description)}
             </p>
           </div>

@@ -13,8 +13,6 @@ import DestinationCard from './destination-card';
 export default function Destinations({
   data,
 }: AbstractContentProvider<Itinerary[]>) {
-  console.log(data);
-
   return (
     <Shell>
       <div className="mb-8 w-full px-4">
@@ -26,12 +24,18 @@ export default function Destinations({
             <div className="flex size-10 items-center justify-center rounded-full border-2 border-emphasis text-center">
               <LucideIcons.chevronRight className="text-emphasis" size={32} />
             </div>
-            <h4 className="text-wrap font-semibold leading-[1em] text md:text-[32px]">
+            <h4 className="text-wrap font-semibold leading-[1em] text">
               {DESTINATIONS.action.text.toUpperCase()}
             </h4>
           </span>
         </div>
-        {data?.map((item) => <DestinationCard itinerary={item} />)}
+        {data?.map((item, index) => (
+          <DestinationCard
+            itinerary={item}
+            itemIndex={index + 1}
+            key={item.itinerary_id}
+          />
+        ))}
       </div>
     </Shell>
   );

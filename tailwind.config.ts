@@ -22,6 +22,7 @@ const config = {
         accent: ['var(--font-accent)', ...fontFamily.sans],
       },
       fontSize: {
+        caption: 'var(--text-caption)',
         body: 'var(--text-body)',
         heading: 'var(--text-heading)',
         'sub-heading': 'var(--text-sub-heading)',

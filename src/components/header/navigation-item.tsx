@@ -31,12 +31,14 @@ export function NavigationItem({ index, item }: NavigationItemProps) {
       <Link
         href={item.href}
         aria-current={current ? 'page' : undefined}
-        className='md:text-[17px] md:font-bold [&[aria-current="page"]]:border-b-2 [&[aria-current="page"]]:border-default'
+        className='[&[aria-current="page"]]:border-default md:text-[17px] md:font-bold [&[aria-current="page"]]:border-b-2'
       >
         {!item.action ? (
           titleCase(getItemName(item.name))
         ) : (
-          <Button variant="outline">{titleCase(getItemName(item.name))}</Button>
+          <Button variant="outline-gold">
+            {titleCase(getItemName(item.name))}
+          </Button>
         )}
       </Link>
     </React.Fragment>

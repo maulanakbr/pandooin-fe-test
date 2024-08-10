@@ -21,7 +21,7 @@ export default function Hero({ data }: AbstractContentProvider<Hero>) {
         {'action' in data &&
           typeof data.action === 'object' &&
           'text' in data.action! && (
-            <Button variant="outline" className="mt-4">
+            <Button variant="outline-gold" className="mt-4">
               {titleCase(data.action.text as string, true)}
             </Button>
           )}

@@ -117,3 +117,13 @@ export const DESTINATIONS = {
     text: 'explore more',
   },
 } satisfies AbstractContent;
+
+export const ARTICLES = {
+  headline: 'articles',
+  description: 'Our curated writings, offering something for every reader.',
+} satisfies AbstractContent;
+
+export const FOOTER = {
+  headline: 'zamrood',
+  subHeadline: 'PT Teknologi Pandu Wisata',
+} satisfies AbstractContent;

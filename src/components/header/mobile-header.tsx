@@ -5,7 +5,6 @@ import * as React from 'react';
 import { cn } from '@/lib/cn';
 import { NAVIGATIONS } from '@/lib/constants';
 
-import LazyIcon from '../icons/lazy-icon';
 import { LucideIcons } from '../icons/lucide-icons';
 import Logo from '../logo';
 import { NavigationItem } from './navigation-item';

@@ -31,7 +31,6 @@ const config = {
         DEFAULT: 'hsl(var(--bg))',
         emphasis: 'hsl(var(--bg-emphasis))',
         subtle: 'hsl(var(--bg-subtle))',
-        foreground: 'hsl(var(--bg-foreground))',
         accent: 'hsl(var(--bg-accent))',
       },
       textColor: {

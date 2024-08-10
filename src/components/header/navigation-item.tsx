@@ -7,6 +7,8 @@ import { usePathname } from 'next/navigation';
 import type { NavigationItem } from '@/lib/constants';
 import { getItemName } from '@/lib/get-item-name';
 import { titleCase } from '@/lib/title-case';
+import { useMediaQuery } from '@/hooks/use-media-query';
+import { useScroll } from '@/hooks/use-scroll';
 
 import { Button } from '../ui/button';
 
@@ -19,8 +21,10 @@ const defaultIsCurrent: NavigationItem['isCurrent'] = ({ item, pathname }) => {
   return item.href ? (pathname?.startsWith(item.href) ?? false) : false;
 };
 
-export function NavigationItem({ index, item }: NavigationItemProps) {
+export function NavigationItem({ item }: NavigationItemProps) {
   const pathname = usePathname();
+  const { isScroll } = useScroll();
+  const matches = useMediaQuery('(max-width: 600px)');
 
   const isCurrent: NavigationItem['isCurrent'] =
     item.isCurrent || defaultIsCurrent;
@@ -36,7 +40,15 @@ export function NavigationItem({ index, item }: NavigationItemProps) {
         {!item.action ? (
           titleCase(getItemName(item.name))
         ) : (
-          <Button variant="outline-gold">
+          <Button
+            variant={
+              matches
+                ? 'outline-emphasis'
+                : !matches && !isScroll
+                  ? 'outline-gold'
+                  : 'outline-emphasis'
+            }
+          >
             {titleCase(getItemName(item.name))}
           </Button>
         )}

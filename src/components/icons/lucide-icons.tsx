@@ -1,5 +1,7 @@
-import { ChevronRight } from 'lucide-react';
+import { AlignJustify, ChevronRight, X } from 'lucide-react';
 
 export const LucideIcons = {
-  chevronRight: ChevronRight,
+  ChevronRight: ChevronRight,
+  MobileMenu: AlignJustify,
+  CloseIcon: X,
 };

@@ -22,7 +22,7 @@ export default function Destinations({
           </h4>
           <span className="inline-flex items-center gap-4">
             <div className="flex size-10 items-center justify-center rounded-full border-2 border-emphasis text-center">
-              <LucideIcons.chevronRight className="text-emphasis" size={32} />
+              <LucideIcons.ChevronRight className="text-emphasis" size={32} />
             </div>
             <h4 className="text-wrap font-semibold leading-[1em] text">
               {DESTINATIONS.action.text.toUpperCase()}

@@ -1,3 +1,4 @@
+import * as React from 'react';
 import Image from 'next/image';
 
 import { actualDate } from '@/lib/actual-date';
@@ -17,7 +18,24 @@ export default function DestinationCard({
   itinerary,
   itemIndex,
 }: DestinationCardProps) {
+  const [shuffleImage, setShuffleImage] = React.useState<string>('');
+
   const matches = useMediaQuery('(max-width: 600px)');
+
+  React.useEffect(() => {
+    const getRandomImage = () => {
+      if (itinerary.related_galleries.length > 0) {
+        const randomIndex = Math.floor(
+          Math.random() * itinerary.related_galleries.length
+        );
+        setShuffleImage(itinerary?.related_galleries[randomIndex]?.src || '');
+      }
+    };
+
+    const intervalId = setInterval(getRandomImage, 5000);
+
+    return () => clearInterval(intervalId);
+  }, [itinerary.related_galleries]);
 
   return (
     <div
@@ -40,9 +58,9 @@ export default function DestinationCard({
         <Image
           className="size-full object-cover"
           src={
-            itinerary && itinerary?.related_galleries?.length > 0
+            shuffleImage === ''
               ? itinerary?.related_galleries[0]?.src
-              : '/assets/pics/hero.png'
+              : shuffleImage
           }
           alt={
             itinerary && itinerary?.related_galleries?.length > 0

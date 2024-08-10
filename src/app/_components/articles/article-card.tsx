@@ -23,7 +23,7 @@ export default function ArticleCard({ article, className }: ArticleCardProps) {
       </div>
       <div className="max-h-40 bg-subtle px-7 py-4">
         <p className="text-caption font-semibold text-foreground md:text-body">
-          {truncate(article?.title, 60)}
+          {truncate(article?.title, 50)}
         </p>
       </div>
     </div>

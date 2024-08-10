@@ -4,6 +4,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import { cn } from '@/lib/cn';
 import type { NavigationItem } from '@/lib/constants';
 import { getItemName } from '@/lib/get-item-name';
 import { titleCase } from '@/lib/title-case';
@@ -35,7 +36,11 @@ export function NavigationItem({ item }: NavigationItemProps) {
       <Link
         href={item.href}
         aria-current={current ? 'page' : undefined}
-        className='[&[aria-current="page"]]:border-default md:text-[17px] md:font-bold [&[aria-current="page"]]:border-b-2'
+        className={cn(
+          !matches && !isScroll
+            ? 'md:text-[17px] md:font-bold [&[aria-current="page"]]:border-b-2 [&[aria-current="page"]]:border-foreground'
+            : 'md:text-[17px] md:font-bold [&[aria-current="page"]]:border-b-2 [&[aria-current="page"]]:border-emphasis'
+        )}
       >
         {!item.action ? (
           titleCase(getItemName(item.name))
